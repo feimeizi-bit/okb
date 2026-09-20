@@ -1,0 +1,15 @@
+[Unit]
+Description=Local Embedding Server (fastembed BAAI/bge-small-zh-v1.5)
+After=network.target
+
+[Service]
+Type=simple
+User=okb
+WorkingDirectory=%h/embed-server
+Environment=HF_ENDPOINT=https://hf-mirror.com
+ExecStart=%h/embed-server/venv/bin/python -m uvicorn server:app --host 127.0.0.1 --port 18001
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
