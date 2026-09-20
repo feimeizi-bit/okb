@@ -1,0 +1,10 @@
+# 统一换行符：脚本类文件强制 LF（Linux 上 CRLF 会导致 $'\r' 报错）
+* text=auto
+*.sh text eol=lf
+*.py text eol=lf
+*.service text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
